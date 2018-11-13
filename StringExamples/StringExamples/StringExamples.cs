@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Text.RegularExpressions;
 
 namespace StringUtility
 {
@@ -32,7 +31,7 @@ namespace StringUtility
         /// Reverses text by word (based on separation by spaces)
         /// </summary>
         /// <param name="text">Text to be reversed by spaces</param>
-        public string ReverseTextByWord(string text)
+        public string ReverseStringByWord(string text)
         {
             if (String.IsNullOrWhiteSpace(text)) throw new InvalidOperationException("Text cannot be null, empty, or only consist of spaces");
 
