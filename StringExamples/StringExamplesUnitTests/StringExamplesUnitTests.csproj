@@ -51,6 +51,7 @@
   <ItemGroup>
     <Compile Include="ReverseStringTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReverseTextByWordTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
