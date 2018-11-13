@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text.RegularExpressions;
 
 namespace StringUtility
 {
@@ -25,6 +26,29 @@ namespace StringUtility
             }
 
             return new string(textAsCharArray);
+        }
+
+        /// <summary>
+        /// Reverses text by word (based on separation by spaces)
+        /// </summary>
+        /// <param name="text">Text to be reversed by spaces</param>
+        public string ReverseTextByWord(string text)
+        {
+            if (String.IsNullOrWhiteSpace(text)) throw new InvalidOperationException("Text cannot be null, empty, or only consist of spaces");
+
+            var textSplit = text.Split(' ');
+
+            //loops iterations stop at half point of split array since two values are being switched during each loop iteration
+            for (int i = 0; i < textSplit.Length / 2; i++)
+            {
+                string firstValue = textSplit[i];
+                string secondValue = textSplit[textSplit.Length - i - 1];
+
+                textSplit[i] = secondValue;
+                textSplit[textSplit.Length - i - 1] = firstValue;
+            }
+
+            return String.Join(" ", textSplit);
         }
     }
 }
